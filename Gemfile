@@ -32,6 +32,7 @@ gem 'bulma-rails'
 gem 'simple_form'
 gem 'gravatar_image_tag'
 
+gem "paperclip", "~> 6.0.0"
 gem 'devise'
 
 group :development, :test do
