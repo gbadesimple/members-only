@@ -33,20 +33,38 @@
     <div class="navbar-end">
       <div class="field is-grouped">
 
+
+<% if member_signed_in? %>
       <div class="control">
         <p>
           <%= link_to "New Post", new_post_path, class:"button is-warning is-light" %>
         </p>
       </div>
 
+      <div class="control">
+        <p>
+          <%= link_to current_member.name, edit_member_registration_path, class:"button is-info" %>
+        </p>
+      </div>
+
+      <div class="control">
+        <p>
+          <%= link_to "Logout", destroy_member_session_path, method: :delete, class:"button is-info" %>
+        </p>
+      </div>
+<% else %>
+
         <div class="control">
-           <p class="button is-warning">
-             Sign up
+           <p>
+             <%= link_to "Become a member", new_member_registration_path, class:"button is-warning" %>
            </p>
         </div>
 
         <div class="control">
-          <p class="button is-info"> Sign In </p>
+          <p>
+            <%= link_to "Login", new_member_session_path, class: "button is-danger" %>
+          </p>
+<% end %>
         </div>
       </div>
     </div>
