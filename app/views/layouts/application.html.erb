@@ -13,26 +13,49 @@
 
 
 <!-- navigation bar -->
-<nav class="navbar is-info" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <%= link_to root_path, class:"navbar-item" do %>
-      <h2 class="title is-5"> Homepage </h2>
-    <% end %>
-  </div>
+<% if member_signed_in? %>
+    <nav class="navbar is-info" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <%= link_to root_path, class:"navbar-item" do %>
+          <h2 class="title is-5"> Homepage </h2>
+        <% end %>
+      </div>
 
-  <div>
-    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
+      <div>
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
 
-  <div id="navbarExample" class="navbar-menu">
+      <div id="navbarExample" class="navbar-menu">
 
-    <div class="navbar-end">
-      <div class="field is-grouped">
+        <div class="navbar-end">
+          <div class="field is-grouped">
 
+<% else %>
+      <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+
+        <div class="navbar-brand">
+          <%= link_to root_path, class:"navbar-item" do %>
+            <h2 class="title is-5"> Homepage </h2>
+          <% end %>
+        </div>
+
+        <div>
+          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div id="navbarExample" class="navbar-menu">
+
+          <div class="navbar-end">
+            <div class="field is-grouped">
+<% end %>
 
 <% if member_signed_in? %>
       <div class="control">
@@ -88,5 +111,17 @@
 
 <%= yield %>
 
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+       Powered by <strong>GbadeSimple</strong> CEO  <a href="#" > @codetech Inc. </a>
+       <br />
+      The source code is licensed
+      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+      is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+    </p>
+  </div>
+</footer>
   </body>
 </html>
