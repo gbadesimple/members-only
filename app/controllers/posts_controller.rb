@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   include PostsHelper
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  #before_action :authenticate_member!, :except [ :index, :show ]
+  #before_action :authenticate_member!, :only [ :new, :create ]
 
   # GET /posts
   # GET /posts.json
