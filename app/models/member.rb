@@ -9,5 +9,6 @@ class Member < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
 has_many :posts
+has_one :author
 
 end

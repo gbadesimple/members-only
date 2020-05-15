@@ -4,5 +4,6 @@ class Post < ApplicationRecord
   validates :author, presence:true
 
   belongs_to :member
+  has_one :author
 
 end
