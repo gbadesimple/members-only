@@ -6,7 +6,7 @@
       <% if member_signed_in? %>
         <p>
           <strong>Author:</strong>
-          <%= @post.author %>
+          <%= @post.member.name %>
         </p>
       <% end %>
         <p>
